@@ -18,7 +18,6 @@ soup = BeautifulSoup(response,'html.parser')
 #3. KOSPI 값을 선택자(selector)를 활용해서 가져온다.
 kospi_value=soup.select_one('body > div').text
 print(kospi_value)
-eur = soup.select('body > div > table > tbody > tr')
+eur = soup.select_one('body > div > table')
 # body > div > table > tbody > tr:nth-child(1) > td.sale
-for tr in eur:
-    print(tr.select('td.sale'))
+print(eur)
