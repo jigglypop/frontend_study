@@ -18,3 +18,26 @@ maze = {
 }
 
 
+Q=['a']
+v=set('a')
+H=[]
+
+while Q:
+    n=Q.pop(0)
+    k=maze[n] 
+    
+    for i in range(len(maze[n])):
+        if k[i] == 'p':
+            H.append('p')
+            break
+        if k[i] not in v:
+            Q.append(k[i])
+            v.add(k[i])
+            H.append(k[i])
+
+print(H)
+     
+
+
+
+
