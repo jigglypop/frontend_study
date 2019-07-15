@@ -1,22 +1,13 @@
-# 4 4
-# ####
-# #JF#
-# #..#
-# #..#
-
-
-
-
-
-
 from sys import stdin
 from collections import deque
 input = stdin.readline
+
 
 R, C = map(int, input().split())
 m = [list(input().strip()) for _ in range(R)]
 D = [[0]*C for _ in range(R)]
 q = deque()
+
 for i in range(R):
     for j in range(C):
         if m[i][j] == 'J':
@@ -40,8 +31,7 @@ def BFS():
             if not D[nx][ny] and m[nx][ny] != '#':
                 q.append((nx, ny, f))
                 D[nx][ny] = D[x][y] + 1
-    print("IMPOSSIBLE")
+    print("x")
+
 
 BFS()
-
-
