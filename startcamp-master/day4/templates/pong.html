@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>{{text}}</h1>
+    <h1>{{nn}}</h1>
+    <h1>{{gg}}</h1>
+    {% if pingersnap==1 %}
+        <h1>당신은 사망했습니다</h1>
+        <img src="http://img.postshare.co.kr/images/2018/11/the-russo-bros-explain-that-the-snap-in-avengers-infinity-war-permanently-damaged-thanos.jpg" alt="">
+    {% else %}
+        <h1>당신은 살았습니다</h1>
+        <img src="https://post-phinf.pstatic.net/MjAxODExMTJfOTYg/MDAxNTQyMDA3MzU5MjA2.fbAcwG-cvF03rcjQEHkbGp4grasMApV1IXCYp30KwPYg.E5i-U-V2A3McVsLZMvOfQFeEAKMHZTMlhBx0Y4jlgSMg.JPEG/20181112_143027.jpg?type=w1200" alt="">
+    {% endif %}
+</body>
+</html>

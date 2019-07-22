@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- jinja2 : 템플릿 엔진 -->
+    <h1>{{name}} 안녕?</h1>
+    {% if name == '용흠' %}
+        <h1>{{name}}, 안녕하십니까 반장님</h1>
+        <img src="http://img.khan.co.kr/news/2015/03/09/l_2015030901001358100105402.jpg" alt="">
+    {% else %}
+        <h1>{{name}}, 안녕</h1>
+        <img src="https://i.ytimg.com/vi/yZV5fbS77jY/maxresdefault.jpg" alt="">
+    {% endif %} #<-- endif를 쓴다는 거 헷갈림
+                     
+</body>
+</html>

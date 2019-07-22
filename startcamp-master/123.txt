@@ -1,0 +1,11 @@
+
+
+https://api.telegram.org/bot760120264:AAHYTIKLyfL9rE_8JS_2D97rGhxaosGSs1s/METHOD_NAME
+
+
+https://f060ee55.ngrok.io/760120264:AAHYTIKLyfL9rE_8JS_2D97rGhxaosGSs1s
+
+
+https://www.example.com/<token>
+
+760120264:AAHYTIKLyfL9rE_8JS_2D97rGhxaosGSs1s
