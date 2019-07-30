@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- 외부파일 링크 -->
+  <link rel="stylesheet" href="01_style.css">
+  <!-- 내부참조(embed) head 태그 내에 style 태그 -->
+  <style>
+    /* 태그 선택자 */
+    h1 { 
+      color: red;  
+    }
+    h3 { 
+      color: pink;
+    }
+    /* 클래스 선택자 */
+    .blue {
+      color: blue;
+    }
+    .brown {
+      color: brown !important;
+    }
+    /* 아이디 선택자: #아이디명 */
+    #green {
+      color: green;
+    }
+    /* !important는 적용된 순서에 따라서 */
+  </style>
+</head>
+<body>
+
+  <!-- 선택자는 우선순위가 있다.
+      id > class > tag
+      id는 반드시 하나만 작성한다.
+      대신 class를 사용하는 것이 좋다.
+      class는 문서에서 여러번 등장한다.
+  -->
+  <h1>Hello. CSS!</h1> 
+  <h2 class="blue">선택자</h2>
+  <h3 class="blue">태그 선택자</h3>
+  <!-- 클래스 선택자 > 태그 선택자 -->
+  <h3 id="green">클래스 선택자</h3>
+  <!-- 아이디 선택자 > 태그 선택자 -->
+  <h3 id="green" class="blue">클래스 선택자</h3>
+  <!-- 아이디 선택자 > 클래스 선택자 > 태그 선택자 -->
+  <!-- 클래스 선택자가 태그 선택자보다 더 우선한다.  -->
+  <p id="green" style="color: purple;">인라인 CSS활용</p>
+  <!-- 가장 많은 노력을 들인 style을 우선한다.-->
+  <p id="green" class="blue brown" style="color: purple;">인라인 CSS활용</p>
+  <!-- !important가 CSS적용이 가장 우선된다. 
+      하지만, 사용에 주의하자. 남발하지 말자.
+  -->
+</body>
+</html>
