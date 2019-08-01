@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)file:///C:/Users/student/Desktop/%EA%B7%B8%EB%A6%BC/NAVER_files/fxshow.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>NAVER</title>
+<link rel="stylesheet" type="text/css" href="file:///C:/Users/student/Desktop/%EA%B7%B8%EB%A6%BC/NAVER_files/timeboard.min.css">
+<script type="text/javascript" src="file:///C:/Users/student/Desktop/%EA%B7%B8%EB%A6%BC/NAVER_files/pc.veta.core.min.js(1).%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"></script>
+</head>
+<body onload="initAd()" marginwidth="0" marginheight="0">
+	<div id="da_timeboard">
+		<div class="content">
+			<div id="addiv" class="ad">
+				<a href="https://nv.veta.naver.com/fxclick?eu=EU10020353&amp;calp=1&amp;oj=bbC87fref31gAyAF8147l4k4Cm1BDAHDBazN69ObGo3dqHPk9JevPJPdYKal5KFtJeBWqEwHERNg40mLPchi3DuqpgIIMEUlv7JwPSR8qBSbGnvForPIkjXttrYFGtN%2B&amp;ac=7874574&amp;src=3909684&amp;br=2929234&amp;evtcd=P901&amp;x_ti=837&amp;tb=&amp;oid=&amp;sid1=&amp;sid2=&amp;rk=31604607d8a293db5fefde57561e457d&amp;eltts=482p9HYa%2FUxukR0kYduGDg%3D%3D&amp;lu=&amp;brs=Y&amp;" id="ac_banner_a" target="_blank">
+					<img src="file:///C:/Users/student/Desktop/%EA%B7%B8%EB%A6%BC/NAVER_files/2b2e1cb28ef26f11736f_20190625110212386.jpg" width="740" height="120" title="" alt="[광고]프랑스 어디서나 Visa와 함께 하세요 혜택 알아보기" border="0">
+				<div id="da_access" style="position: absolute; top: 50%; left: 50%; width: 154px; height: 58px; margin: -29px 0px 0px -77px; background: url(&quot;https://ssl.pstatic.net/tveta/libs/res/www/common/info/da_access.png&quot;); display: none;"></div><div id="da_access" style="position: absolute; top: 50%; left: 50%; width: 154px; height: 58px; margin: -29px 0px 0px -77px; background: url(&quot;https://ssl.pstatic.net/tveta/libs/res/www/common/info/da_access.png&quot;); display: none;"></div></a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	document.domain = "naver.com";
+
+	function initAd() {
+		// ACK IMP
+		new Nimp(["https://nv.veta.naver.com/fxview?eu=EU10020353&calp=1&oj=bbC87fref31gAyAF8147l4k4Cm1BDAHDBazN69ObGo3dqHPk9JevPJPdYKal5KFtJeBWqEwHERNg40mLPchi3DuqpgIIMEUlv7JwPSR8qBSbGnvForPIkjXttrYFGtN%2B&ac=7874574&src=3909684&evtcd=P100&x_ti=837&tb=&oid=&sid1=&sid2=&rk=31604607d8a293db5fefde57561e457d&eltts=482p9HYa%2FUxukR0kYduGDg%3D%3D&brs=Y&&eid=V800"]).log(1);
+
+		initAltForImage();
+	}
+
+	function initAltForImage() {
+		// DA Alternative - Create Access Layer
+		var accessLayer = document.createElement('div');
+		accessLayer.setAttribute('id', 'da_access');
+		accessLayer.style.cssText = 'position:absolute;top:50%;left:50%;width:154px;height:58px;margin:-29px 0 0 -77px;background:url(https://ssl.pstatic.net/tveta/libs/res/www/common/info/da_access.png)';
+		accessLayer.style.display = "none";
+		var oAdDiv = document.getElementById("ac_banner_a");
+		oAdDiv.appendChild(accessLayer);
+
+		// DA Alternative - Focus Action
+		var altLink = document.getElementById("ac_banner_a");
+		var bMousedown = false;
+		altLink.onmousedown = function() {
+			bMousedown = true;
+		};
+		altLink.onfocus = function() {
+			if (!bMousedown) {
+				accessLayer.style.display = "block";
+			}
+		};
+		altLink.onblur = function() {
+			accessLayer.style.display = "none";
+		};
+	}
+	</script>
+
+<div style="display: none;"></div><div style="display: none;"></div></body></html>
