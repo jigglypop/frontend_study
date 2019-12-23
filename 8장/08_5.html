@@ -31,9 +31,8 @@
             </ul>
             <a href="#" id="view">상세 설명 보기</a>
         </div>
-
+        <hr>
         <div id="detail">
-            <hr>
             <h2>상품 상세 정보</h2>
             <ul>
                 <li>원산지 : 에디오피아</li>
@@ -49,19 +48,38 @@
             <p>은은하고 다채로운 꽃향, 망고, 다크 체리, 달달함이 입안 가득.</p>
         </div>
     </div>
+
+    <script src="js/product.js"></script>
     <script>
-        // 스크립트 작성
+        // 색깔 바꾸기
+        document.querySelector("#heading").style.color = "white"
+        document.querySelector("#heading").style.backgroundColor = "gray"
+
+        // 크기 바꾸기
+        var isOpen = false;
         var bigPic = document.querySelector("#cup");
         var smallPics = document.querySelectorAll(".small");
 
-        for (var i = 0; i < smallPics.length; i++) {
-            smallPics[i].onclick = showBig;
+        for (i = 0; i < smallPics.length; i++) {
+            smallPics[i].addEventListener("click", function() {
+                newPic = this.src;
+                bigPic.setAttribute("src", newPic);
+            });
         }
 
-        function showBig() {
-            var newPic = this.src;
-            bigPic.setAttribute("src", newPic);
-        }
+        // 상세 설명 닫기
+        var view = document.querySelector("#view");
+        view.addEventListener("click", function() {
+            if (isOpen == false) {
+                document.querySelector("#detail").style.display = "block";
+                view.innerHTML = "상세 설명 닫기";
+                isOpen = true;
+            } else {
+                document.querySelector("#detail").style.display = "none";
+                view.innerHTML = "상세 설명 보기";
+                isOpen = false;
+            }
+        });
     </script>
 </body>
 
