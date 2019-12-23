@@ -21,11 +21,16 @@
     </div>
 
     <script>
-        var newP = document.createElement("p")
-        var newText = document.createTextNode("주문이 완료되었습니다.")
+        function newRegister() {
+            var userName = document.querySelector("#userName");
+            var newText = document.createTextNode(userName.value);
+            var newP = document.createElement("p");
+            var nameList = document.querySelector("#nameList");
 
-        newP.appendChild(newText)
-        document.body.appendChild(newP)
+            newP.appendChild(newText);
+            nameList.appendChild(newP);
+            userName.value = "";
+        }
     </script>
 </body>
 
