@@ -30,6 +30,21 @@
             newP.appendChild(newText);
             nameList.appendChild(newP);
             userName.value = "";
+
+            var delBttn = document.createElement("span");
+            var delText = document.createTextNode("x");
+            delBttn.setAttribute("class", "del");
+            delBttn.appendChild(delText);
+            newP.appendChild(delBttn);
+
+            var removeBttns = document.querySelectorAll(".del");
+
+            for (var i = 0; i < removeBttns.length; i++) {
+                removeBttns[i].addEventListener("click", function() {
+                    if (this.parentNode.parentNode)
+                        this.parentNode.parentNode.removeChild(this.parentNode);
+                });
+            }
         }
     </script>
 </body>
