@@ -1,12 +1,17 @@
 import Router from 'koa-router';
 import * as postsCtrl from './posts.ctrl';
+import checkLoggedIn from '../../lib/checkLoggedIn';
 
-const router = new Router();
+const posts = new Router();
 
-router.get('/', postsCtrl.list);
-router.post('/', postsCtrl.write);
-router.get('/:id', postsCtrl.checkObjectId, postsCtrl.read);
-router.delete('/:id', postsCtrl.checkObjectId, postsCtrl.remove);
-router.patch('/:id', postsCtrl.checkObjectId, postsCtrl.update);
+posts.get('/', postsCtrl.list);
+posts.post('/', checkLoggedIn, postsCtrl.write);
 
-export default router;
+const post = new Router(); // /api/posts/:id
+post.get('/', postsCtrl.read);
+post.delete('/', checkLoggedIn, postsCtrl.checkOwnPost, postsCtrl.remove);
+post.patch('/', checkLoggedIn, postsCtrl.checkOwnPost, postsCtrl.update);
+
+posts.use('/:id', postsCtrl.getPostById, post.routes());
+
+export default posts;

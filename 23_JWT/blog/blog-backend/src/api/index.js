@@ -1,7 +1,11 @@
 import Router from 'koa-router';
 import posts from './posts';
+import auth from './auth';
 
-const router = new Router();
-router.use('/posts', posts.routes());
+const api = new Router();
 
-export default router;
+api.use('/posts', posts.routes());
+api.use('/auth', auth.routes());
+
+// 라우터를 내보냅니다.
+export default api;
