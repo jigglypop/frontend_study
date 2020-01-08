@@ -1,30 +1,39 @@
-import Joi from 'joi';
-import User from '../../models/user';
+import mongoose, {Schema} from 'mongoose';
+import bcrypt from 'bcrypy';
+import jwt from 'jsonwebtoken';
 
-export const register = async ctx =>{
-    const schema = Joi.object().keys({
-        username:Joi.string().alphanum().min(3).max(20).required(),
-        password:Joi.string().required(),
-    });
-    const result = Joi.validate(ctx.request.body,schema);
-    
-    if (result.error){
-        ctx.status = 400;
-        ctx.body = result.error;
-        return;
-    }
-    const {username,password} = ctx.request.body;
-    try{
-        const exists = await User.findByUsername(username);
-        if (exists){
-            ctx.status = 409;
-            return;
-        }
-        const user = new User({
-            username,
-        });
-        await user
-    }
-}
+const UserSchema = new Schema({
+    username:String,
+    hashedPassword:String,
+})
 
+UserSchema.methods.setPassword = async function(password){
+    const hash = await bcrypt.hash(password,10);
+    this.hashedPassword = hash;
+};
 
+UserSchema.method.checkPassword = async function(password){
+    const result = await bcrypt.compare(password,this.hashedPassword);
+    return result;
+};
+
+UserSchema.methods.generateToken = function(){
+    const token = jwt.sign(
+        {
+            _id:this.id,
+            username:this.username,
+        },
+        process.env.JWT_SECRET,
+        {
+            expiresIN:'7d',
+        },
+    );
+    return token;
+};
+
+UserSchema.statics.findByUsername = function(username){
+    return this.findOne({username})
+};
+
+const User = mongoose.model('User',UserSchema);
+export default User;
