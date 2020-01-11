@@ -1,7 +1,7 @@
 import React from 'react';
 
 const WritePage = () => {
-  return <div>ì�½ê¸°</div>;
+  return <div>쓰기</div>;
 };
 
 export default WritePage;
