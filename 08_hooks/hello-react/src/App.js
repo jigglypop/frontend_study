@@ -1,31 +1,21 @@
-import React, { useState } from "react";
-import Counter from "./Counter";
-import Counter_reducer from "./Counter_reducer";
-import Info from "./Info";
-import Info_effect from "./Info_effect";
-import Average from "./Average";
+import React from "react";
+import UseState from "./UseState.jsx";
+import UseReducer from "./UseReducer.jsx";
+import UseState2 from "./UseState2.jsx";
+import UseEffect from "./UseEffect.jsx";
+import UseMemo from "./UseMemo.jsx";
+import UseCallback from "./UseCallback.jsx";
 
 const App = () => {
-  const [visible, setVisible] = useState(false);
   return (
-    // <div>
-    //   <button
-    //     onClick={() => {
-    //       setVisible(!visible);
-    //     }}
-    //   >
-    //     {!visible ? "보이기" : "숨기기"}
-    //   </button>
-    //   <hr />
-    //   {visible && <Info_effect />}
-    // </div>
-    // <div>
-    //   <Counter_reducer />
-    // </div>
     <div>
-      <Average />
+      <UseState />
+      <UseState2 />
+      <UseEffect />
+      <UseReducer />
+      <UseMemo />
+      <UseCallback />
     </div>
-    // <Info />
   );
 };
 
