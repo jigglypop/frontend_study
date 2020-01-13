@@ -4,29 +4,16 @@ class EventPractice2 extends Component {
   state = {
     message: ""
   };
-  handleChange = event => {
-    this.setState({
-      message: event.target.value
-    });
-  };
-  handleClick = () => {
-    alert(this.state.message);
-    this.setState({
-      message: ""
-    });
-  };
   render() {
     return (
       <div>
-        <h1>이벤트 연습</h1>
+        <h1>4.2.2.3. 버튼을 누를 때 comment값을 공백으로 설정</h1>
         <input
           type="text"
-          name="message"
-          placeholder="아무거나 입력"
           value={this.state.message}
-          onChange={this.handleChange}
+          onChange={e => this.setState({ message: e.target.value })}
         />
-        <button onClick={this.handleClick}>확인</button>
+        <button onClick={() => this.setState({ message: "" })}>확인</button>
       </div>
     );
   }

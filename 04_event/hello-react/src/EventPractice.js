@@ -7,30 +7,15 @@ class EventPractice extends Component {
   render() {
     return (
       <div>
-        <h1>이벤트 연습</h1>
+        <h1>4.2.2.2. state에 input담기</h1>
         <input
           type="text"
-          name="message"
-          placeholder="아무거나 입력"
-          onChange={e => {
-            this.setState({
-              message: e.target.value
-            });
-          }}
+          value={this.state.message}
+          onChange={e => this.setState({ message: e.target.value })}
         />
-        <button
-          onClick={() => {
-            alert(this.state.message);
-            this.setState({
-              message: ""
-            });
-          }}
-        >
-          확인
-        </button>
+        {this.state.message}
       </div>
     );
   }
 }
-
 export default EventPractice;
