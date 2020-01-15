@@ -7,21 +7,24 @@ class ValidationSample extends Component {
     clicked: false,
     validated: false
   };
-  handleChange = event => {
+
+  handleChange = e => {
     this.setState({
-      password: event.target.value
+      password: e.target.value
     });
   };
-  handleButtonClick = () => {
+  handleClick = () => {
     this.setState({
       clicked: true,
       validated: this.state.password === "0000"
     });
+    this.input.focus();
   };
   render() {
     return (
       <div>
         <input
+          ref={ref => (this.input = ref)}
           type="password"
           value={this.state.password}
           onChange={this.handleChange}
@@ -33,7 +36,7 @@ class ValidationSample extends Component {
               : ""
           }
         />
-        <button onClick={this.handleButtonClick}>검증하기</button>
+        <button onClick={this.handleClick}>검증</button>
       </div>
     );
   }
