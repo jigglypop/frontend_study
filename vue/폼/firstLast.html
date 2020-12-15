@@ -1,0 +1,167 @@
+<html>
+<head>
+  <title>Vue.js 애완용품샵</title>
+  <meta charset="UTF-8">
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+  <header>
+    <div>
+      <div>
+        <h1>{{ sitename }}</h1>
+      </div>
+      <div>
+        <button type="button" v-on:click="showCheckout">
+          <span>{{cartItemCount}}</span> 체크아웃
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div>
+      <div v-if="showProduct">
+        <div>
+          <p class="price">
+            {{product.price | formatPrice}}
+          </p>
+          <button v-on:click="addToCart" v-if="canAddToCart">장바구니 담기</button>
+          <button disabled="true" v-else >장바구니 담기</button>
+        </div>
+      </div>
+      <div v-else>
+        <div class="col-md-10 col-md-offset-1">
+          <div class="panel panel-info">
+            <div class="panel-body">
+              <div class="form-group">
+                <div class="col-md-6">
+                  <strong>이름:</strong>
+                  <input v-model.trim="order.firstName" class="form-control" />
+                </div>
+                <div class="col-md-6">
+                  <strong>성:</strong>
+                  <input v-model.trim="order.lastName" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group">
+                <strong>주:</strong>
+                <select v-model="order.state" class="form-control">
+                <option disabled value="">주</option>
+                <option v-for="(state, key) in states" v-bind:value="state">
+                    {{key}}
+                </option>
+                </select>
+                <strong>우편번호:</strong>
+                <input v-model.number="order.zip"
+                class="form-control"
+                type="number"/>
+                <input type="checkbox"
+                id="gift" value="true"
+                v-bind:true-value="order.sendGift"
+                v-bind:false-value="order.dontSendGift"
+                v-model="order.gift">
+                <label for="checkbox">선물로 보내기?</label>
+                <input type="radio"
+                id="home"
+                v-bind:value="order.home"
+                v-model="order.method">
+                <label for="home">자택</label>
+                <input type="radio"
+                id="business"
+                v-bind:value="order.business"
+                v-model="order.method">
+                <label for="business">직장</label>
+                <button type="submit" class="btn btn-primary submit" v-on:click="submitForm">주문하기</button>
+              <div class="col-md-12 verify">
+                <pre>
+                  이름: {{order.firstName}}
+                  성: {{order.lastName}}
+                  우편번호: {{order.zip}}
+                  주: {{order.state}}
+                  배송지: {{order.method}}
+                  선물: {{order.gift}}
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="text/javascript">
+    var APP_LOG_LIFECYCLE_EVENTS = true;
+    var webstore = new Vue({
+      el: '#app',
+      data: {
+        sitename: "Vue.js 애완용품샵",
+        showProduct: true,
+        a: false,
+        states: {
+          AL: '알라바마',
+          AK: '알래스카',
+          AR: '애리조나',
+          CA: '캘리포니아',
+          NV: '네바다'
+        },
+        order: {
+          firstName: '',
+          lastName: '',
+          address: '',
+          state: '',
+          method: '자택 주소',
+          business: '직장 주소',
+          home: '자택 주소',
+          gift:'선물로 보내기',
+          sendGift: '선물로 보내기',
+          dontSendGift: '선물로 보내기 않기'
+        },
+        product: {
+          id: 1001,
+          title: "고양이 사료, 25파운드",
+          description: "당신의 고양이를 위한 <em>거부할 수 없는</em>, 유기농 25파운드 사료입니다.",
+          price: 2000,
+          availableInventory: 5
+        },
+        cart: []
+      },
+      methods: {
+        addToCart: function() {
+          this.cart.push( this.product.id );
+        },
+        showCheckout() {
+          this.showProduct = this.showProduct ? false: true;
+        },
+        submitForm() {
+          alert('제출 완료');
+        }
+      },
+      computed: {
+        cartItemCount() {
+          return this.cart.length || '';
+        },
+        canAddToCart() {
+          return this.product.availableInventory > this.cartItemCount;
+        }
+      },
+      filters: {
+        formatPrice(price) {
+          if (!parseInt(price)) { return ""; }
+          if (price > 99999) {
+            var priceString = (price / 100).toFixed(2);
+            var priceArray = priceString.split("").reverse();
+            var index = 3;
+            while (priceArray.length > index + 3) {
+              priceArray.splice(index+3, 0, ",");
+              index += 4;
+            }
+            return "$" + priceArray.reverse().join("");
+          } else {
+            return "$" + (price / 100).toFixed(2);
+          }
+        }
+      },
+    });
+</script>
+</body>
+</html>
