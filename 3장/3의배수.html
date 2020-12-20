@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='result'>입력</div>
+    <script>
+        var userNumber = prompt('숫자를 입력하세요');
+        var displayArea = document.querySelector('#result');
+
+        if (userNumber != null) {
+            if (userNumber % 3 === 0) {
+                displayArea.innerHTML = userNumber + " 3의 배수"
+            } else {
+                displayArea.innerHTML = userNumber + " 3의 배수 아님"
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn" onclick="calc()">입력</button>
+    <p id="result">결과</p>
+
+    <script>
+        function calc() {
+            var cur = 2019;
+            var bir = prompt('', "YYYY");;
+            var age = cur - bir + 1;
+            document.querySelector("#result").innerHTML = age + "살"
+        }
+    </script>
+</body>
+
+</html>

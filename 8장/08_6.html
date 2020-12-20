@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM - Create & Add Node</title>
+    <link rel="stylesheet" href="css/nameList.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>참가 신청</h1>
+        <form action="">
+            <input type="text" id="userName" placeholder="이름" required>
+            <button onclick="newRegister();return false;">신청</button>
+        </form>
+        <hr>
+        <div id="nameList"></div>
+    </div>
+
+    <script>
+        function newRegister() {
+            var userName = document.querySelector("#userName");
+            var newText = document.createTextNode(userName.value);
+            var newP = document.createElement("p");
+            var nameList = document.querySelector("#nameList");
+
+            newP.appendChild(newText);
+            nameList.appendChild(newP);
+            userName.value = "";
+
+            var delBttn = document.createElement("span");
+            var delText = document.createTextNode("x");
+            delBttn.setAttribute("class", "del");
+            delBttn.appendChild(delText);
+            newP.appendChild(delBttn);
+
+            var removeBttns = document.querySelectorAll(".del");
+
+            for (var i = 0; i < removeBttns.length; i++) {
+                removeBttns[i].addEventListener("click", function() {
+                    if (this.parentNode.parentNode)
+                        this.parentNode.parentNode.removeChild(this.parentNode);
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>
