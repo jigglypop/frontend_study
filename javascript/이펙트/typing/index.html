@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <div id="app">
+        
+    </div>
+    <script>
+        document.getElementById("app").innerHTML = `
+            <h2 id="typing-head">예약 플랫폼 FRONT END</h2>
+            <div id="typing-content">
+                인턴 지원자 염동환
+            </div>
+        `;
+        
+        const typeEffect = new Promise((element, speed) => {
+          let text = element.innerHTML;
+          element.innerHTML = "";
+        
+          let i = 0;
+          let timer = setInterval(function () {
+            if (i < text.length) {
+              element.append(text.charAt(i));
+              console.log(text[0])
+              i++;
+            } else {
+              clearInterval(timer);
+            }
+          }, speed);
+        })
+        
+        let speed = 75;
+        let head = document.querySelector("#typing-head");
+        let content = document.querySelector("#typing-content");
+        
+        typeEffect(head, speed);
+        typeEffect(head, speed);
+
+        setTimeout(function () {
+          content.style.display = "inline-block";
+          typeEffect(content, speed);
+        }, 100);
+        
+    </script>
+</body>
+</html>

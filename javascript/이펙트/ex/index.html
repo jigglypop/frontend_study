@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <div id="app">
+        <div class="text"></div>
+        <div>
+            <div class="container">
+                <div class="card">1</div>
+                <div class="card">2</div>
+                <div class="card">3</div>
+            </div>
+        </div>
+        <div class="text"></div>
+        <div>
+            <div class="container">
+                <div class="card">4</div>
+                <div class="card">5</div>
+                <div class="card">6</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const getScroll = () =>{
+            let containers = document.getElementsByClassName("container");
+            for (let j = 0; j <containers.length; j++){
+                let container = document.getElementsByClassName("container")[j];
+                let card = container.childNodes;           
+                let windowY = window.scrollY;
+                let cardsOffset = container.getBoundingClientRect().top;
+ 
+                if (windowY > cardsOffset - window.innerHeight / 2) {    
+                    for (let i = 0; i < card.length; i++) {
+                        if (card[i].classList === undefined) continue
+                        setTimeout(function () {
+                        card[i].classList.add("seen-card");
+                        }, 300 * i);                
+                    }
+                }
+            }
+        }
+        window.addEventListener("scroll", getScroll);
+    </script>
+</body>
+</html>
