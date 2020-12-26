@@ -1,1 +1,324 @@
-!function(e){var t={},r={0:0};function n(r){if(t[r])return t[r].exports;var c=t[r]={i:r,l:!1,exports:{}};return e[r].call(c.exports,c,c.exports,n),c.l=!0,c.exports}n.e=function(t){if(0!==r[t]){var n=require("./js/"+({1:"pages-BluePage",2:"pages-RedPage",3:"pages-UsersPage"}[t]||t)+".chunk.js"),c=n.modules,o=n.ids;for(var u in c)e[u]=c[u];for(var s=0;s<o.length;s++)r[o[s]]=0}return Promise.all([])},n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var c in e)n.d(r,c,function(t){return e[t]}.bind(null,c));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="/",n.oe=function(e){process.nextTick((function(){throw e}))},n(n.s=28)}([function(e,t,r){"use strict";r.d(t,"a",(function(){return o}));var n=r(5);function c(e,t){var r=Object.keys(e);if(Object.getOwnPropertySymbols){var n=Object.getOwnPropertySymbols(e);t&&(n=n.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),r.push.apply(r,n)}return r}function o(e){for(var t=1;t<arguments.length;t++){var r=null!=arguments[t]?arguments[t]:{};t%2?c(Object(r),!0).forEach((function(t){Object(n.a)(e,t,r[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(r)):c(Object(r)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(r,t))}))}return e}},function(e,t){e.exports=require("react/jsx-runtime")},function(e,t,r){e.exports=r(27)},function(e,t){e.exports=require("redux-saga/effects")},function(e,t){e.exports=require("react-router-dom")},function(e,t,r){"use strict";function n(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}r.d(t,"a",(function(){return n}))},function(e,t){e.exports=require("redux-actions")},function(e,t){e.exports=require("react")},function(e,t,r){"use strict";function n(e,t,r,n,c,o,u){try{var s=e[o](u),i=s.value}catch(e){return void r(e)}s.done?t(i):Promise.resolve(i).then(n,c)}function c(e){return function(){var t=this,r=arguments;return new Promise((function(c,o){var u=e.apply(t,r);function s(e){n(u,c,o,s,i,"next",e)}function i(e){n(u,c,o,s,i,"throw",e)}s(void 0)}))}}r.d(t,"a",(function(){return c}))},function(e,t){e.exports=require("axios")},function(e,t){e.exports=require("redux")},function(e,t){e.exports=require("redux-saga")},function(e,t){e.exports=require("@loadable/component")},function(e,t,r){"use strict";r.d(t,"b",(function(){return h})),r.d(t,"c",(function(){return g}));var n,c=r(5),o=r(0),u=r(2),s=r.n(u),i=r(8),a=r(9),l=r.n(a),f=r(3),d=r(6),p=s.a.mark(y),b=s.a.mark(g),j=Object(d.createAction)("users/GET_USERS_PENDING"),O=Object(d.createAction)("users/GET_USERS_SUCCESS",(function(e){return e})),v=Object(d.createAction)("users/GET_USERS_FAILURE",(function(e){return!0}),(function(e){return e})),h=function(){return function(){var e=Object(i.a)(s.a.mark((function e(t){var r;return s.a.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.prev=0,t(j()),e.next=4,l.a.get("https://jsonplaceholder.typicode.com/users");case 4:r=e.sent,t(O(r)),e.next=12;break;case 8:throw e.prev=8,e.t0=e.catch(0),t(v(e.t0)),e.t0;case 12:case"end":return e.stop()}}),e,null,[[0,8]])})));return function(t){return e.apply(this,arguments)}}()},x=function(e){return l.a.get("https://jsonplaceholder.typicode.com/users/".concat(e))};function y(e){var t;return s.a.wrap((function(r){for(;;)switch(r.prev=r.next){case 0:return r.prev=0,r.next=3,Object(f.call)(x,e.payload);case 3:return t=r.sent,r.next=6,Object(f.put)({type:"users/GET_USER_SUCCESS",payload:t.data});case 6:r.next=12;break;case 8:return r.prev=8,r.t0=r.catch(0),r.next=12,Object(f.put)({type:"users/GET_USER_FAILURE",payload:r.t0,error:!0});case 12:case"end":return r.stop()}}),p,null,[[0,8]])}function g(){return s.a.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,Object(f.takeEvery)("users/GET_USER",y);case 2:case"end":return e.stop()}}),b)}var S=Object(d.handleActions)((n={},Object(c.a)(n,"users/GET_USERS_PENDING",(function(e){return Object(o.a)(Object(o.a)({},e),{},{loading:Object(o.a)(Object(o.a)({},e.loading),{},{users:!0}),error:Object(o.a)(Object(o.a)({},e.error),{},{users:null})})})),Object(c.a)(n,"users/GET_USERS_SUCCESS",(function(e,t){return Object(o.a)(Object(o.a)({},e),{},{loading:Object(o.a)(Object(o.a)({},e.loading),{},{users:!1}),users:t.payload.data})})),Object(c.a)(n,"users/GET_USERS_FAILURE",(function(e,t){return Object(o.a)(Object(o.a)({},e),{},{loading:Object(o.a)(Object(o.a)({},e.loading),{},{users:!1}),error:Object(o.a)(Object(o.a)({},e.error),{},{users:t.payload})})})),n),{users:null,loading:{users:!1,user:!1},error:{users:null,user:null}});t.a=S},function(e,t){e.exports=require("react-dom/server")},function(e,t){e.exports=require("express")},function(e,t){e.exports=require("path")},function(e,t){e.exports=require("@loadable/server")},function(e,t){e.exports=require("react-redux")},function(e,t,r){"use strict";r.d(t,"b",(function(){return o}));var n=r(7),c=Object(n.createContext)(null);t.a=c;var o=function(e){var t=Object(n.useContext)(c);return t?t.done?null:void t.promises.push(Promise.resolve(e())):null}},function(e,t,r){"use strict";r.d(t,"b",(function(){return s}));var n,c=r(5),o=r(0),u=(r(2),r(8),r(9),r(3),r(6)),s=Object(u.createAction)("users/GET_USER",(function(e){return e}));Object(u.createAction)("users/GET_USER_SUCCESS",(function(e){return e})),Object(u.createAction)("users/GET_USER_SUCCESS",(function(e){return e}));var i=Object(u.handleActions)((n={},Object(c.a)(n,"users/GET_USER",(function(e){return Object(o.a)(Object(o.a)({},e),{},{loading:Object(o.a)(Object(o.a)({},e.loading),{},{user:!0}),error:Object(o.a)(Object(o.a)({},e.error),{},{user:null})})})),Object(c.a)(n,"users/GET_USER_SUCCESS",(function(e,t){return Object(o.a)(Object(o.a)({},e),{},{loading:Object(o.a)(Object(o.a)({},e.loading),{},{user:!1}),user:t.payload})})),Object(c.a)(n,"users/GET_USER_FAILURE",(function(e,t){return Object(o.a)(Object(o.a)({},e),{},{loading:Object(o.a)(Object(o.a)({},e.loading),{},{user:!1}),error:Object(o.a)(Object(o.a)({},e.error),{},{user:t.payload})})})),n),{users:null,loading:{users:!1,user:!1},error:{users:null,user:null}});t.a=i},function(e,t,r){"use strict";var n=r(1),c=r.n(n),o=r(7),u=r.n(o),s=r(4),i=r.n(s),a=r(22),l=r(12),f=r.n(l),d=f()({resolved:{},chunkName:function(){return"pages-RedPage"},isReady:function(e){var t=this.resolve(e);return!0===this.resolved[t]&&!!r.m[t]},importAsync:function(){return r.e(2).then(r.bind(null,25))},requireAsync:function(e){var t=this,r=this.resolve(e);return this.resolved[r]=!1,this.importAsync(e).then((function(e){return t.resolved[r]=!0,e}))},requireSync:function e(t){var n=this.resolve(t);return r(n)},resolve:function e(){return 25}}),p=f()({resolved:{},chunkName:function(){return"pages-BluePage"},isReady:function(e){var t=this.resolve(e);return!0===this.resolved[t]&&!!r.m[t]},importAsync:function(){return r.e(1).then(r.bind(null,26))},requireAsync:function(e){var t=this,r=this.resolve(e);return this.resolved[r]=!1,this.importAsync(e).then((function(e){return t.resolved[r]=!0,e}))},requireSync:function e(t){var n=this.resolve(t);return r(n)},resolve:function e(){return 26}}),b=f()({resolved:{},chunkName:function(){return"pages-UsersPage"},isReady:function(e){var t=this.resolve(e);return!0===this.resolved[t]&&!!r.m[t]},importAsync:function(){return r.e(3).then(r.bind(null,24))},requireAsync:function(e){var t=this,r=this.resolve(e);return this.resolved[r]=!1,this.importAsync(e).then((function(e){return t.resolved[r]=!0,e}))},requireSync:function e(t){var n=this.resolve(t);return r(n)},resolve:function e(){return 24}}),j=function(){return Object(n.jsxs)("div",{children:[Object(n.jsx)(a.a,{}),Object(n.jsx)("hr",{}),Object(n.jsx)(s.Route,{path:"/red",component:d}),Object(n.jsx)(s.Route,{path:"/blue",component:p}),Object(n.jsx)(s.Route,{path:"/users",component:b})]})};t.a=j},function(e,t,r){"use strict";var n=r(1),c=(r(7),r(4));t.a=function(){return Object(n.jsxs)("ul",{children:[Object(n.jsx)("li",{children:Object(n.jsx)(c.Link,{to:"/red",children:"Red"})}),Object(n.jsx)("li",{children:Object(n.jsx)(c.Link,{to:"/blue",children:"Blue"})}),Object(n.jsx)("li",{children:Object(n.jsx)(c.Link,{to:"/users",children:"Users"})})]})}},function(e,t){e.exports=require("redux-thunk")},,,,function(e,t){e.exports=require("regenerator-runtime")},function(e,t,r){"use strict";r.r(t);var n=r(2),c=r.n(n),o=r(8),u=r(1),s=(r(7),r(14)),i=r.n(s),a=r(15),l=r.n(a),f=r(4),d=r(21),p=r(16),b=r.n(p),j=r(10),O=r(18),v=r(23),h=r.n(v),x=r(11),y=r.n(x),g=r(13),S=r(20),m=r(3),E=c.a.mark(_);function _(){return c.a.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,Object(m.all)([Object(g.c)()]);case 2:case"end":return e.stop()}}),E)}var R=Object(j.combineReducers)({users:g.a,user:S.a}),P=r(19),U=r(17),k=b.a.resolve("./build/loadable-stats.json");function w(e,t){return'<!DOCTYPE html>\n  <html lang="en">\n  <head>\n    <meta charset="utf-8" />\n    <link rel="shortcut icon" href="/favicon.ico" />\n    <meta\n      name="viewport"\n      content="width=device-width,initial-scale=1,shrink-to-fit=no"\n    />\n    <meta name="theme-color" content="#000000" />\n    <title>React App</title>\n    '.concat(t.styles,"\n    ").concat(t.links,'\n  </head>\n  <body>\n    <noscript>You need to enable JavaScript to run this app.</noscript>\n    <div id="root">\n      ').concat(e,"\n    </div>\n    ").concat(t.scripts,"\n  </body>\n  </html>\n    ")}var T=l()(),A=function(){var e=Object(o.a)(c.a.mark((function e(t,r,n){var o,s,a,l,p,b,v,g,S,m,E;return c.a.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return o={},s=y()(),a=Object(j.createStore)(R,Object(j.applyMiddleware)(h.a,s)),l=s.run(_).toPromise(),p={done:!1,promises:[]},b=new U.ChunkExtractor({statsFile:k}),v=Object(u.jsx)(U.ChunkExtractorManager,{extractor:b,children:Object(u.jsx)(P.a.Provider,{value:p,children:Object(u.jsx)(O.Provider,{store:a,children:Object(u.jsx)(f.StaticRouter,{location:t.url,context:o,children:Object(u.jsx)(d.a,{})})})})}),i.a.renderToStaticMarkup(v),a.dispatch(x.END),e.prev=9,e.next=12,l;case 12:return e.next=14,Promise.all(p.promises);case 14:e.next=19;break;case 16:return e.prev=16,e.t0=e.catch(9),e.abrupt("return",r.status(500));case 19:p.done=!0,g=i.a.renderToString(v),S=JSON.stringify(a.getState()).replace(/</g,"\\u003c"),m="<script>__PRELOADED_STATE__ = ".concat(S,"<\/script>"),E={scripts:m+b.getScriptTags(),links:b.getLinkTags(),styles:b.getStyleTags()},r.send(w(g,E));case 25:case"end":return e.stop()}}),e,null,[[9,16]])})));return function(t,r,n){return e.apply(this,arguments)}}(),q=l.a.static(b.a.resolve("./build"),{index:!1});T.use(q),T.use(A),T.listen(5e3,(function(){console.log("Running on http://localhost:5000")}))}]);
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/server.tsx");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/lib/createPage.ts":
+/*!*******************************!*\
+  !*** ./src/lib/createPage.ts ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (({\n  helmet,\n  webExtractor,\n  html\n}) => {\n  return `\n      <!DOCTYPE html>\n        <html lang=\"en\">\n          <head>\n            <meta name=\"viewport\" content=\"width=device-width, user-scalable=no\">\n            <meta name=\"google\" content=\"notranslate\">\n            ${helmet.title.toString()}\n            ${webExtractor.getLinkTags()}\n            ${webExtractor.getStyleTags()}\n          </head>\n          <body>\n            <div id=\"root\">${html}</div>\n            ${webExtractor.getScriptTags()}\n          </body>\n        </html>\n    `;\n});\n\n//# sourceURL=webpack:///./src/lib/createPage.ts?");
+
+/***/ }),
+
+/***/ "./src/server.tsx":
+/*!************************!*\
+  !*** ./src/server.tsx ***!
+  \************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! express */ \"express\");\n/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(express__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! path */ \"path\");\n/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(path__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\n/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _loadable_server__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @loadable/server */ \"@loadable/server\");\n/* harmony import */ var _loadable_server__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_loadable_server__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-helmet */ \"react-helmet\");\n/* harmony import */ var react_helmet__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_helmet__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-redux */ \"react-redux\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_6__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! redux */ \"redux\");\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_7__);\n/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n/* harmony import */ var react_dom_server__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_dom_server__WEBPACK_IMPORTED_MODULE_8__);\n/* harmony import */ var _store_reducers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./store/reducers */ \"./src/store/reducers/index.ts\");\n/* harmony import */ var _lib_createPage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./lib/createPage */ \"./src/lib/createPage.ts\");\n\n\n\n\n\n\n\n\n\n\n\nconst app = express__WEBPACK_IMPORTED_MODULE_0___default()();\n\nif (true) {\n  const webpack = __webpack_require__(/*! webpack */ \"webpack\");\n\n  const webpackConfig = __webpack_require__(/*! ../webpack.client.js */ \"./webpack.client.js\").map(config => {\n    config.output.path = config.output.path.replace('dist/dist/', 'dist/');\n    return config;\n  });\n\n  const webpackDevMiddleware = __webpack_require__(/*! webpack-dev-middleware */ \"webpack-dev-middleware\");\n\n  const webpackHotMiddleware = __webpack_require__(/*! webpack-hot-middleware */ \"webpack-hot-middleware\");\n\n  const compiler = webpack(webpackConfig);\n  app.use(webpackDevMiddleware(compiler, {\n    logLevel: 'silent',\n    publicPath: webpackConfig[0].output.publicPath,\n    writeToDisk: true\n  }));\n  app.use(webpackHotMiddleware(compiler));\n}\n\napp.use(express__WEBPACK_IMPORTED_MODULE_0___default.a.static(path__WEBPACK_IMPORTED_MODULE_1___default.a.resolve(__dirname)));\napp.get('*', (req, res) => {\n  const nodeStats = path__WEBPACK_IMPORTED_MODULE_1___default.a.resolve(__dirname, './node/loadable-stats.json');\n  const webStats = path__WEBPACK_IMPORTED_MODULE_1___default.a.resolve(__dirname, './web/loadable-stats.json');\n  const nodeExtractor = new _loadable_server__WEBPACK_IMPORTED_MODULE_4__[\"ChunkExtractor\"]({\n    statsFile: nodeStats\n  });\n  const {\n    default: App\n  } = nodeExtractor.requireEntrypoint();\n  const webExtractor = new _loadable_server__WEBPACK_IMPORTED_MODULE_4__[\"ChunkExtractor\"]({\n    statsFile: webStats\n  });\n  const store = Object(redux__WEBPACK_IMPORTED_MODULE_7__[\"createStore\"])(_store_reducers__WEBPACK_IMPORTED_MODULE_9__[\"default\"]);\n  const context = {};\n  const jsx = webExtractor.collectChunks( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_6__[\"Provider\"], {\n    store: store\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__[\"StaticRouter\"], {\n    location: req.url,\n    context: context\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(App, null))));\n  const html = Object(react_dom_server__WEBPACK_IMPORTED_MODULE_8__[\"renderToString\"])(jsx);\n  const helmet = react_helmet__WEBPACK_IMPORTED_MODULE_5__[\"Helmet\"].renderStatic();\n  res.set('content-type', 'text/html');\n  res.send(Object(_lib_createPage__WEBPACK_IMPORTED_MODULE_10__[\"default\"])({\n    helmet,\n    webExtractor,\n    html\n  }));\n});\nconst port = 5000;\napp.listen(port, () => {\n  console.log(\"---------------서버 실행---------------\");\n  console.log(`http://localhost:${port}`);\n});\n\n//# sourceURL=webpack:///./src/server.tsx?");
+
+/***/ }),
+
+/***/ "./src/store/reducers/counterReducer.ts":
+/*!**********************************************!*\
+  !*** ./src/store/reducers/counterReducer.ts ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction counter(state = 0, action) {\n  switch (action.type) {\n    case 'INCREMENT':\n      return state + 1;\n\n    case 'DECREMENT':\n      return state - 1;\n\n    default:\n      return state;\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (counter);\n\n//# sourceURL=webpack:///./src/store/reducers/counterReducer.ts?");
+
+/***/ }),
+
+/***/ "./src/store/reducers/index.ts":
+/*!*************************************!*\
+  !*** ./src/store/reducers/index.ts ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ \"redux\");\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _counterReducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./counterReducer */ \"./src/store/reducers/counterReducer.ts\");\n\n\nconst rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__[\"combineReducers\"])({\n  counterReducer: _counterReducer__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\n});\n/* harmony default export */ __webpack_exports__[\"default\"] = (rootReducer);\n\n//# sourceURL=webpack:///./src/store/reducers/index.ts?");
+
+/***/ }),
+
+/***/ "./webpack.client.js":
+/*!***************************!*\
+  !*** ./webpack.client.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const path = __webpack_require__(/*! path */ \"path\");\r\nconst webpack = __webpack_require__(/*! webpack */ \"webpack\");\r\nconst nodeExternals = __webpack_require__(/*! webpack-node-externals */ \"webpack-node-externals\");\r\nconst LoadablePlugin = __webpack_require__(/*! @loadable/webpack-plugin */ \"@loadable/webpack-plugin\");\r\nconst MiniCssExtractPlugin = __webpack_require__(/*! mini-css-extract-plugin */ \"mini-css-extract-plugin\");\r\nconst createStyledComponentsTransformer = __webpack_require__(/*! typescript-plugin-styled-components */ \"typescript-plugin-styled-components\").default;\r\n\r\nconst devMode = \"development\" !== 'production';\r\nconst hotMiddlewareScript = `webpack-hot-middleware/client?name=web&path=/__webpack_hmr&timeout=20000&reload=true`;\r\nconst styledComponentsTransformer = createStyledComponentsTransformer();\r\n\r\nconst getEntryPoint = target => {\r\n  if (target === 'node') {\r\n    return ['./src/App.tsx'];\r\n  }\r\n  return devMode ? [hotMiddlewareScript, './src/index.tsx'] : ['./src/index.tsx'];\r\n};\r\n\r\nconst getConfig = target => ({\r\n  mode: devMode ? 'development' : 'production',\r\n\r\n  name: target,\r\n\r\n  target,\r\n\r\n  entry: getEntryPoint(target),\r\n\r\n  output: {\r\n    path: path.resolve(__dirname, `dist/${target}`),\r\n    filename: '[name].js',\r\n    publicPath: '/web/',\r\n    libraryTarget: target === 'node' ? 'commonjs2' : undefined,\r\n  },\r\n\r\n  module: {\r\n    rules: [\r\n      {\r\n        test: /\\.tsx?$/,\r\n        use: [\r\n          'babel-loader',\r\n          {\r\n            loader: 'ts-loader',\r\n            options: {\r\n              getCustomTransformers: () => ({ before: [styledComponentsTransformer] }),\r\n            },\r\n          },\r\n        ],\r\n      },\r\n      {\r\n        test: /\\.(scss|css)$/,\r\n        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],\r\n      },\r\n    ],\r\n  },\r\n\r\n  resolve: {\r\n    extensions: ['.js', '.jsx', '.ts', '.tsx'],\r\n    alias: {\r\n      pages: path.resolve('src/pages/'),\r\n      components: path.resolve('src/components/'),\r\n      actions: path.resolve('src/store/actions/'),\r\n      reducers: path.resolve('src/store/reducers/'),\r\n      util: path.resolve('src/util/'),\r\n    },\r\n  },\r\n\r\n  plugins:\r\n    target === 'web'\r\n      ? [new LoadablePlugin(), new webpack.HotModuleReplacementPlugin(), new MiniCssExtractPlugin()]\r\n      : [new LoadablePlugin(), new MiniCssExtractPlugin()],\r\n\r\n  externals: target === 'node' ? ['@loadable/component', nodeExternals()] : undefined,\r\n});\r\n\r\nmodule.exports = [getConfig('web'), getConfig('node')];\r\n\n\n//# sourceURL=webpack:///./webpack.client.js?");
+
+/***/ }),
+
+/***/ "@loadable/server":
+/*!***********************************!*\
+  !*** external "@loadable/server" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"@loadable/server\");\n\n//# sourceURL=webpack:///external_%22@loadable/server%22?");
+
+/***/ }),
+
+/***/ "@loadable/webpack-plugin":
+/*!*******************************************!*\
+  !*** external "@loadable/webpack-plugin" ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"@loadable/webpack-plugin\");\n\n//# sourceURL=webpack:///external_%22@loadable/webpack-plugin%22?");
+
+/***/ }),
+
+/***/ "express":
+/*!**************************!*\
+  !*** external "express" ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"express\");\n\n//# sourceURL=webpack:///external_%22express%22?");
+
+/***/ }),
+
+/***/ "mini-css-extract-plugin":
+/*!******************************************!*\
+  !*** external "mini-css-extract-plugin" ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"mini-css-extract-plugin\");\n\n//# sourceURL=webpack:///external_%22mini-css-extract-plugin%22?");
+
+/***/ }),
+
+/***/ "path":
+/*!***********************!*\
+  !*** external "path" ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"path\");\n\n//# sourceURL=webpack:///external_%22path%22?");
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "react" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"react\");\n\n//# sourceURL=webpack:///external_%22react%22?");
+
+/***/ }),
+
+/***/ "react-dom/server":
+/*!***********************************!*\
+  !*** external "react-dom/server" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"react-dom/server\");\n\n//# sourceURL=webpack:///external_%22react-dom/server%22?");
+
+/***/ }),
+
+/***/ "react-helmet":
+/*!*******************************!*\
+  !*** external "react-helmet" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"react-helmet\");\n\n//# sourceURL=webpack:///external_%22react-helmet%22?");
+
+/***/ }),
+
+/***/ "react-redux":
+/*!******************************!*\
+  !*** external "react-redux" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"react-redux\");\n\n//# sourceURL=webpack:///external_%22react-redux%22?");
+
+/***/ }),
+
+/***/ "react-router-dom":
+/*!***********************************!*\
+  !*** external "react-router-dom" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"react-router-dom\");\n\n//# sourceURL=webpack:///external_%22react-router-dom%22?");
+
+/***/ }),
+
+/***/ "redux":
+/*!************************!*\
+  !*** external "redux" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"redux\");\n\n//# sourceURL=webpack:///external_%22redux%22?");
+
+/***/ }),
+
+/***/ "typescript-plugin-styled-components":
+/*!******************************************************!*\
+  !*** external "typescript-plugin-styled-components" ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"typescript-plugin-styled-components\");\n\n//# sourceURL=webpack:///external_%22typescript-plugin-styled-components%22?");
+
+/***/ }),
+
+/***/ "webpack":
+/*!**************************!*\
+  !*** external "webpack" ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"webpack\");\n\n//# sourceURL=webpack:///external_%22webpack%22?");
+
+/***/ }),
+
+/***/ "webpack-dev-middleware":
+/*!*****************************************!*\
+  !*** external "webpack-dev-middleware" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"webpack-dev-middleware\");\n\n//# sourceURL=webpack:///external_%22webpack-dev-middleware%22?");
+
+/***/ }),
+
+/***/ "webpack-hot-middleware":
+/*!*****************************************!*\
+  !*** external "webpack-hot-middleware" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"webpack-hot-middleware\");\n\n//# sourceURL=webpack:///external_%22webpack-hot-middleware%22?");
+
+/***/ }),
+
+/***/ "webpack-node-externals":
+/*!*****************************************!*\
+  !*** external "webpack-node-externals" ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"webpack-node-externals\");\n\n//# sourceURL=webpack:///external_%22webpack-node-externals%22?");
+
+/***/ })
+
+/******/ });
