@@ -1,12 +1,12 @@
 import express from 'express';
 import path from 'path';
-import React from 'react';
+import React, { createContext } from 'react';
 import { StaticRouter } from 'react-router-dom';
 import { ChunkExtractor } from '@loadable/server';
 import { Helmet } from 'react-helmet';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import { renderToString } from 'react-dom/server';
+import { createStore, applyMiddleware } from 'redux';
+import ReactDOMServer, { renderToString } from 'react-dom/server';
 
 import reducers from './store/reducers';
 import createPage from './lib/createPage';
@@ -20,6 +20,12 @@ import resolvers from "./server/graphql/resolvers";
 import { typeDefs } from "./server/graphql/typeDefs";
 import { ApolloServer } from "apollo-server-express";
 import cors from "cors";
+
+import rootReducer from './modules';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import createSagaMiddleware from 'redux-saga'
+
+
 
 config()
 const PORT = process.env.PORT;
@@ -55,26 +61,45 @@ if (process.env.NODE_ENV !== 'production') {
   server.use(webpackHotMiddleware(compiler));
 }
 
+
 server.use(express.static(path.resolve(__dirname)));
-server.get('*', (req : express.Request, res : express.Response) => {
+server.get('*', async (req : express.Request, res : express.Response) => {
   const nodeStats = path.resolve(__dirname, './node/loadable-stats.json');
   const webStats = path.resolve(__dirname, './web/loadable-stats.json');
   const nodeExtractor = new ChunkExtractor({ statsFile: nodeStats });
   const { default: App } = nodeExtractor.requireEntrypoint();
   const webExtractor = new ChunkExtractor({ statsFile: webStats });
 
-  const store = createStore(reducers);
+  const sagaMiddleware = createSagaMiddleware()
+  const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
+  // const store = createStore(reducers);
   const context = {};
 
+  const preloadContext = {
+    done:false,
+    promises:[]
+  }
+  const PreloadContext = createContext(preloadContext)
+
   const jsx = webExtractor.collectChunks(
-    <Provider store={store}>
-      <StaticRouter location={req.url} context={context}>
-        <App />
-      </StaticRouter>
-    </Provider>,
+    <PreloadContext.Provider value={preloadContext}>
+      <Provider store={store}>
+        <StaticRouter location={req.url} context={context}>
+          <App />
+        </StaticRouter>
+      </Provider>
+    </PreloadContext.Provider>
   );
 
-  const html = renderToString(jsx);
+  ReactDOMServer.renderToStaticMarkup(jsx)
+  try{
+    await Promise.all(preloadContext.promises)
+  }catch(e){
+    return res.status(500)
+  }
+  preloadContext.done = true
+
+  const html = ReactDOMServer.renderToString(jsx);
   const helmet = Helmet.renderStatic();
   res.set('content-type', 'text/html');
   res.send(createPage({helmet, webExtractor, html}));

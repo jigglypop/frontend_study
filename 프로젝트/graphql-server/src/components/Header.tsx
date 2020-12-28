@@ -4,8 +4,12 @@ import './Header.scss';
 
 const Header = () => (
   <header>
-    <Link to="/">Home</Link>
-    <Link to="/news">News</Link>
+    <Link to="/">PostList </Link>
+    <Link to="/home">Home </Link>
+    <Link to="/news">News </Link>
+    <Link to="/login">Login </Link>
+    <Link to="/register">Register </Link>
+    <Link to="/write">Write </Link>
   </header>
 );
 

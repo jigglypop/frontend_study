@@ -4,12 +4,17 @@ import { BrowserRouter } from 'react-router-dom';
 import { loadableReady } from '@loadable/component';
 import { Provider } from 'react-redux';
 
-import configureStore from './store';
+// import configureStore from './store';
 import GlobalStyle from './styles/GlobalStyle';
 import App from './App';
+import { applyMiddleware, createStore } from 'redux';
+import rootReducer from './modules';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import createSagaMiddleware from 'redux-saga'
 
-const store = configureStore();
-
+const sagaMiddleware = createSagaMiddleware()
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
+// sagaMiddleware.run()
 loadableReady(() => {
   const rootElement = document.getElementById('root');
   hydrate(

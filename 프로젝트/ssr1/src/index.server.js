@@ -48,6 +48,7 @@ const serverRender = async (req, res, next) => {
   ReactDOMServer.renderToStaticMarkup(jsx);
   store.dispatch(END);
   try {
+    console.log("server");
     await sagaPromise;
     await Promise.all(preloadContext.promises);
   } catch (e) {
