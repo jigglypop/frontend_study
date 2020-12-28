@@ -1,6 +1,4 @@
-import { gql, useMutation } from "@apollo/react-hooks";
-
-
+import { gql } from "@apollo/react-hooks";
 
 export const LOGIN = gql`
   mutation login($username: String!, $password: String!) {
@@ -14,15 +12,30 @@ export const LOGIN = gql`
   }
 `;
 
-const [addUser] = useMutation(LOGIN, {
-    update(proxy, result) {
-      console.log(result)
-    },
-    onError(err:any) {
-      console.log(err)
-    },
-    variables: {
-      username: "ydh2244",
-      password: "1127star",
-    },
-  });
+
+export const REGISTER = gql`
+  mutation register(
+    $username: String!
+    $email: String!
+    $password: String!
+    $confirmPassword: String!
+  ) {
+    register(
+      registerInput: {
+        username: $username
+        email: $email
+        password: $password
+        confirmPassword: $confirmPassword
+      }
+    ) {
+      id
+      email
+      username
+      createdAt
+      token
+    }
+  }
+`;
+
+
+

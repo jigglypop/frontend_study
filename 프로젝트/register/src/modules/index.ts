@@ -1,12 +1,11 @@
 import { combineReducers } from "redux";
-import auth, { AuthState } from './auth'
-
-
-export interface rootState {
-    auth: AuthState
-}
+import auth from './auth/reducer'
+import loading from './loading'
 
 const rootReducer = combineReducers({
-    auth
+    auth,
+    loading
 })
 export default rootReducer
+
+export type RootState = ReturnType<typeof rootReducer>;

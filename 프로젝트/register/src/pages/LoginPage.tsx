@@ -1,13 +1,10 @@
 import React from 'react'
-import AuthTemplate from '../components/auth/AuthTemplate'
-import LoginForm from 'src/components/auth/LoginForm'
+import LoginContainer from 'src/containers/LoginContainer'
 
 export default function LoginPage() {
     
     return (
-        <AuthTemplate>
-            <LoginForm/>        
-        </AuthTemplate>
+        <LoginContainer/>        
     )
 }
 

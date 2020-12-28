@@ -1,25 +1,26 @@
 import React, {ChangeEvent} from 'react'
 import { Link } from 'react-router-dom'
-import { rootState } from 'src/modules'
+import { RootState } from 'src/modules'
 
 const textMap = {
     login:'로그인',
     register:'회원가입'
 }
 
-interface typeProps {
+export type AuthFormProps = {
     type: "login" | "register",
-    form: rootState['auth']['login'] | rootState['auth']['register'], 
+    form: RootState['auth']['login'] | RootState['auth']['register'], 
     onChange : (e: ChangeEvent<HTMLInputElement>) => void, 
-    onSubmit: (e: ChangeEvent<HTMLFormElement>) => void
+    addLogin? : ()=>{},
+    addRegister? : ()=>{}
 }
 
-export default function AuthForm({ type, form, onChange, onSubmit } : typeProps ) {
+export default function AuthForm({ type, form, onChange, addLogin, addRegister } : AuthFormProps ) {
     const text = textMap[type]
     return (
         <div>
             <h3>{text}</h3>
-            <form onSubmit={onSubmit}>
+            <form>
                 <input 
                     autoComplete="username" 
                     name="username" 
@@ -36,22 +37,37 @@ export default function AuthForm({ type, form, onChange, onSubmit } : typeProps 
                     value={form.password}
                 />
                 {type === 'register' && (
-                    <input 
-                        autoComplete="new-password" 
-                        name="password" 
-                        placeholder="비밀번호" 
-                        type="password"
-                        onChange={onChange}
-                        value={form.passwordConfirm}
-                    />
+                    <div>
+                        <input 
+                            autoComplete="email" 
+                            name="email" 
+                            placeholder="이메일" 
+                            type="email"
+                            onChange={onChange}
+                            value={form.email}
+                            />
+                        <input 
+                            autoComplete="confirmPassword" 
+                            name="confirmPassword" 
+                            placeholder="비밀번호 확인" 
+                            type="password"
+                            onChange={onChange}
+                            value={form.confirmPassword}
+                        />
+                    </div>
                 )}
-                <button>{text}</button>
             </form>
             <footer>
                 {type === 'login' ? (
-                    <Link to="/register">회원가입</Link>
+                    <div>
+                        <Link to="/register">회원가입</Link>
+                        <button onClick={addLogin}>{text}</button>
+                    </div>
                 ):(
-                    <Link to="/login">로그인</Link>
+                    <div>
+                        <Link to="/login">로그인</Link>
+                        <button onClick={addRegister}>{text}</button>
+                    </div>
                 )}
             </footer>
         </div>
