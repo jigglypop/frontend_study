@@ -12,6 +12,5 @@ export const createRequestActonTypes = (type : string )=>{
 }
 
 const [REGISTER, REGISTER_SUCCESS, REGISTER_FAILURE] = createRequestActonTypes('auth/REGISTER')
-console.log(REGISTER)
-console.log(REGISTER_SUCCESS)
-console.log(REGISTER_FAILURE)
+const str = decodeURI('%EC%84%B1%EA%B3%B5')
+console.log(str)
