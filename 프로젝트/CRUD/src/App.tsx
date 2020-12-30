@@ -9,6 +9,7 @@ const LoginPage = loadable(() => import('./pages/LoginPage'));
 const RegisterPage = loadable(() => import('./pages/RegisterPage'));
 const WritePage = loadable(() => import('./pages/WritePage'));
 const PostPage = loadable(() => import('./pages/PostPage')); 
+const UpdatePage = loadable(() => import('./pages/PostPage')); 
 
 export interface AppProps{
   url : object

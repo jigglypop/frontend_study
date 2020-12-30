@@ -6,14 +6,6 @@ interface ContextProps  {
     post:object
 }
 
-// export const preloadContext: ContextProps = {
-//     done:false,
-//     promises:[],
-//     post:[]
-//   }
-// export const PreloadContext = createContext(preloadContext)
-
-// const PreloadContext = createContext<ContextProps | null>(null)
 const PreloadContext = createContext<ContextProps | null>(null)
 
 export default PreloadContext

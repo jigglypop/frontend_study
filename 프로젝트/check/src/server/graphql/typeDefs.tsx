@@ -48,6 +48,7 @@ export const typeDefs = gql`
     login(username: String!, password: String!): User!
     check(username: String!): User!
     writePost(body: String!, title: String!, summary: String!): Post!
+    updatePost(postId: String!,body: String!, title: String!, summary: String!): Post!
     deletePost(postId: ID!): String!
     writeComment(postId: String!, body: String): Post!
     deleteComment(postId: ID!, commentId: ID!): Post!

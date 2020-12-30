@@ -2,17 +2,8 @@ import React from 'react'
 
 export interface PostComponentProps {
     post?:any,
+}
 
-}
-export interface PostItemProps {
-    id?: string,
-    body?: string,
-    title?: string,
-    createdAt?: string,
-    username?: string,
-    comments?: object,
-    likes?: object,
-}
 export default function PostComponent({post}:PostComponentProps) {
     if (!post) return null
     return (

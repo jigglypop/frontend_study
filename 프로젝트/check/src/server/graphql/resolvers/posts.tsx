@@ -13,6 +13,12 @@ interface writePostType {
   title: string;
   summary: string;
 }
+interface updatePostType {
+  postId: string;
+  body: string;
+  title: string;
+  summary: string;
+}
 interface deletePostType {
   postId: string;
 }
@@ -74,8 +80,32 @@ const postResolver = {
         createdAt: new Date().toISOString(),
       });
       const post = await newPost.save();
-
       return post;
+    },
+    async updatePost(
+      _: any,
+      { postId, body, title, summary }: updatePostType,
+      context: any
+    ) {
+      const user: IUser = await checkAuth(context);
+      try {
+        const post = await Post.findById(postId);
+        if (post) {
+          if (post.username === user.username){
+            post.body = await body
+            post.title = await title
+            post.summary = await summary
+            await post.save()
+            return post;
+          }else{
+            throw new Error("글 수정 권한이 없습니다.");
+          }
+        } else {
+          throw new Error("포스트가 없습니다.");
+        }
+      } catch (err) {
+        throw new Error(err);
+      }
     },
     async deletePost(_: any, { postId }: deletePostType, context: any) {
       try {
@@ -84,6 +114,8 @@ const postResolver = {
         if (post && post.username === user.username) {
           await post.deleteOne();
           return "포스트가 삭제되었습니다.";
+        }else {
+          throw new Error("삭제할 권한이 없습니다.");
         }
       } catch (err) {
         throw new Error("서버 에러");
