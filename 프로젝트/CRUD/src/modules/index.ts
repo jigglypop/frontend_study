@@ -5,8 +5,11 @@ import server from './server/reducer'
 import write from './write/reducer'
 import list from './list/reducer'
 import post from './post/reducer'
+import update from './update/reducer'
+import deletes from './delete/reducer'
+import readcomment from './readcomment/reducer'
+// import commentwrite from './commentwrite/reducer'
 
-import loading from './loading'
 
 const rootReducer = combineReducers({
     check,
@@ -15,7 +18,10 @@ const rootReducer = combineReducers({
     server,
     list,
     post,
-    loading
+    update,
+    deletes,
+    readcomment,
+    // commentwrite
 })
 export default rootReducer
 

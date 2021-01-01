@@ -9,7 +9,8 @@ const LoginPage = loadable(() => import('./pages/LoginPage'));
 const RegisterPage = loadable(() => import('./pages/RegisterPage'));
 const WritePage = loadable(() => import('./pages/WritePage'));
 const PostPage = loadable(() => import('./pages/PostPage')); 
-const UpdatePage = loadable(() => import('./pages/PostPage')); 
+const UpdatePage = loadable(() => import('./pages/UpdatePage')); 
+const DeletePage = loadable(() => import('./pages/DeletePage')); 
 
 export interface AppProps{
   url : object
@@ -26,6 +27,8 @@ export default function App() {
         <Route path="/register" render={() => <RegisterPage/>} />
         <Route path="/write" render={() => <WritePage/>} />
         <Route path="/post/:postId" render={() => <PostPage/>} />
+        <Route path="/update/:postId" render={() => <UpdatePage/>} />
+        <Route path="/delete/:postId" render={() => <DeletePage/>} />
       </Switch>
       <Footer />
     </div>
