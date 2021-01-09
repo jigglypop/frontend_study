@@ -1,5 +1,5 @@
 const promise = (param) => {
-  return new Promise(function (resolve, reject) {
+  return new Promise((resolve, reject) => {
     if (param) {
       resolve("성공");
     } else {
@@ -8,11 +8,13 @@ const promise = (param) => {
   });
 };
 
-promise(false).then(
+const result = promise(false).then(
   function (result) {
     console.log(result);
+    return promise();
   },
   function (err) {
-    console.log(err);
+    return err;
   }
 );
+console.log(result);
