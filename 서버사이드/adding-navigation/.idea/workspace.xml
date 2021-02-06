@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="63c580f5-0d05-471e-9300-390b0f7425f2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../javascript/this/foo.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../javascript/this/foo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/vue-todo/webpack-simple" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/vue-todo/webpack-simple" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/인스턴스/instance" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/인스턴스/instance" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/DOM/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/DOM/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/DOM/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/DOM/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/SVG/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/SVG/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/SVG/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/SVG/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/default/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/default/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/default/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/default/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/교환/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/교환/img/money.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/교환/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/교환/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/교환/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/마이크/img/bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/마이크/img/mic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/마이크/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/마이크/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/마이크/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/마이크/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/비디오/css/progress.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/비디오/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/비디오/img/poster.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/비디오/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/비디오/videos/gone.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/새 폴더/animate.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/새 폴더/cleanQueue.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/새 폴더/ex.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/새 폴더/jquery-3.5.1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/새 폴더/queue_deque.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/인피니티스크롤/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/인피니티스크롤/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/인피니티스크롤/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/인피니티스크롤/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/폼/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/폼/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/폼/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../효과/폼/style.css" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1o4PnAGGQl7xLjTmZfIiaY7xBwW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="63c580f5-0d05-471e-9300-390b0f7425f2" name="Default Changelist" comment="" />
+      <created>1612543054462</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612543054462</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -3405,7 +3405,6 @@ var _Routes2 = _interopRequireDefault(_Routes);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import Home from "./components/Home";
 _reactDom2.default.hydrate(_react2.default.createElement(
   _reactRouterDom.BrowserRouter,
   null,
