@@ -10,7 +10,6 @@ import { UPDATEPOST } from 'src/gql/update';
 import { RootState } from 'src/modules';
 import { postSuccess } from 'src/modules/post/actions';
 import { changeFieldUpdate, updateFailure, updateSuccess } from 'src/modules/update/actions';
-import changeHelmet from './changeHelmet';
 
 
 export interface TempPostItemProps {
